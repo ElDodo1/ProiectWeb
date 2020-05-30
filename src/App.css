@@ -1,47 +1,50 @@
 :root {
-    --lightest-green:#E0F5CC;
-    --medium-green:#A8C185;
-    --dark-green:#2A4D14;
-    --dark-gray:#212922;
-    --extra-dark-gray:#1A1F16;
+  --lightest-green: #e0f5cc;
+  --medium-green: #a8c185;
+  --dark-green: #2a4d14;
+  --dark-gray: #212922;
+  --extra-dark-gray: #1a1f16;
 
-    --slogan-font-size:21px;
-    --tabTag-font-size:18px;
-    --question-font-size:37px;
-    --searchWord-font-size:16px;
+  --slogan-font-size: 21px;
+  --tabTag-font-size: 18px;
+  --question-font-size: 37px;
+  --searchWord-font-size: 16px;
 
-    --logo-width: 55px;
-    --header-height:80px;
-    --searchBar-height:50px;
+  --logo-width: 55px;
+  --header-height: 80px;
+  --searchBar-height: 50px;
 }
 
-@media (max-width: 1024px){
-    :root{
-     --tabTag-font-size:16px;
-     --question-font-size:28px;
-     --logo-width: 45px;
-     --header-height:70px;
-    }
+@media (max-width: 1024px) {
+  :root {
+    --tabTag-font-size: 16px;
+    --question-font-size: 28px;
+    --logo-width: 45px;
+    --header-height: 70px;
+  }
 }
-@media (max-width: 768px){
-    :root{
-        --slogan-font-size:16px;
-        --tabTag-font-size:14px;
-        --logo-width: 35px;
-        --header-height:60px;
-        --searchBar-height:40px;
-    }
+@media (max-width: 768px) {
+  :root {
+    --slogan-font-size: 16px;
+    --tabTag-font-size: 14px;
+    --logo-width: 35px;
+    --header-height: 60px;
+    --searchBar-height: 40px;
+  }
 }
-@media (max-width: 480px){
-    :root{
-        --question-font-size:21px;  
-        --logo-width: 25px;
-        --header-height:50px;
-    }
+@media (max-width: 480px) {
+  :root {
+    --question-font-size: 21px;
+    --logo-width: 25px;
+    --header-height: 50px;
+  }
 }
 
-.app{
-    background-color: var(--extra-dark-gray);
-    font-family: Roboto;
-    height: 100vh;
+.app {
+  background-color: var(--extra-dark-gray);
+  font-family: Roboto;
+  height: 100vh;
+}
+* {
+  box-sizing: border-box;
 }

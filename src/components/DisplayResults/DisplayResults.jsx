@@ -4,9 +4,18 @@ import "./DisplayResults.css";
 export default class DisplayResults extends Component {
   render() {
     return !this.props.active ? (
-      <img src={inactive} alt="start searching" className="inactiveImg"/>
+      <img src={inactive} alt="start searching" className="inactiveImg" />
     ) : (
-      <ul id="gridContainer">hai norok</ul>
+      <ul id="gridContainer">
+        {this.props.photos.map((photo, index) => {
+          let farm_id = photo.farm;
+          let server_id = photo.server;
+          let id = photo.id;
+          let secret = photo.secret;
+          let photoUrl = `https://farm${farm_id}.staticflickr.com/${server_id}/${id}_${secret}_c.jpg`;
+          return <img src={`${photoUrl}`} key={`p-${index}`} />;
+        })}
+      </ul>
     );
   }
 }
