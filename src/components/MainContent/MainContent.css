@@ -2,32 +2,34 @@
   background-color: var(--extra-dark-gray);
   display:flex;
   flex-direction: column;
-  height: auto;
+  height: fit-content;
 }
 .router{
   display: flex;
   margin-top:10px;
   margin-left:20px;
 }
-.tab{
+.tabInactive,
+.tabActive{
   font-size: var(--tabTag-font-size);
-  color:var(--lightest-green);
   font-weight: 900;
   border: 1px solid var(--lightest-green);
   border-radius: 10px 10px 0 0;
-  background-color:var(--dark-gray);
   padding:8px 32px;
   text-decoration: none;
 }
-.tab:last-of-type{
-  margin-left: 5px;
+.tabInactive{
+  color:var(--lightest-green);
+  background-color:var(--dark-gray);
 }
-.tab:active{
-  /* we have a problem here */
+.tabActive{
   color:var(--dark-gray);
   background-color: var(--medium-green);
 }
-.tab:hover{
+link:hover{
   color:var(--lightest-green);
   background-color: var(--extra-dark-gray);
+}
+link:last-of-type{
+  margin-left: 5px;
 }
