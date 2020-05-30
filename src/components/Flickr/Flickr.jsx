@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Flickr.css";
+import "../../App.css";
 import Search from "../Search/Search";
 import DisplayResults from "../DisplayResults/DisplayResults";
 

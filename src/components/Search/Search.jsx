@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Search.css";
+import "../../App.css";
 import searchIcon from "../../assets/images/search_icon.svg";
 
 export default class Search extends Component {
@@ -21,17 +22,18 @@ export default class Search extends Component {
 
   render() {
     return (
-      <>
-        <h1>What are you looking for</h1>
-        <div>
+      <div className="search-container">
+        <h1>What are you looking for?</h1>
+        <div className="search-bar"> 
+          <img src={searchIcon} alt="" id="searchIcon" />
           <input
             type="search"
+            placeholder="eg. nature"
             onKeyPress={(event) => this.handleKeyPress(event)}
             onChange={(event) => this.handleOnChange(event)}
-          />
-          <img src={searchIcon} alt="" id="searchIcon" />
+          /> 
         </div>
-      </>
-    );
+      </div>
+    )
   }
 }

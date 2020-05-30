@@ -9,17 +9,21 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./MainContent.css";
+import "../../App.css";
+
 export default class MainContent extends Component {
   render() {
     return (
       <div className="mainBg">
         <Router>
+          <div  className="router">
           <Link to="/flickr" className="tab">
             Flickr
           </Link>
           <Link to="/twitter" className="tab">
             Twitter
           </Link>
+          </div>
           <Switch>
             <Route exact path="/">
               <Redirect to="/flickr"></Redirect>

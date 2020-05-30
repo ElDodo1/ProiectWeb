@@ -4,7 +4,7 @@ import "./DisplayResults.css";
 export default class DisplayResults extends Component {
   render() {
     return !this.props.active ? (
-      <img src={inactive} alt="ceva" />
+      <img src={inactive} alt="start searching" className="inactiveImg"/>
     ) : (
       <ul id="gridContainer">hai norok</ul>
     );

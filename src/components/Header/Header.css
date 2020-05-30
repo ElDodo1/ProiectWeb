@@ -1,0 +1,22 @@
+#header{
+    width:100vw;
+    height: var(--header-height);
+    background-color: var(--dark-gray);
+    border-bottom: 1px solid var(--lightest-green);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#slogan{
+    font-size: var(--slogan-font-size);
+    font-style: italic;
+    color:var(--medium-green);
+    margin-left: 5px;
+}
+
+#logo{
+    width:var(--logo-width);
+    height: auto;
+    margin-left: 10px;
+}
