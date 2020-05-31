@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 h1 {
   font-size: var(--question-font-size);
@@ -24,7 +25,7 @@ input {
   color: var(--dark-gray);
   background-color: transparent;
   border: none;
-  width: 100%;
+  width: 96.5%;
   outline: none;
   height: 100%;
 }

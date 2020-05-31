@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import inactive from "../../assets/images/inactive.png";
 import "./DisplayResults.css";
+import "../../App.css"
 export default class DisplayResults extends Component {
   render() {
     return !this.props.active ? (
@@ -13,7 +14,7 @@ export default class DisplayResults extends Component {
           let id = photo.id;
           let secret = photo.secret;
           let photoUrl = `https://farm${farm_id}.staticflickr.com/${server_id}/${id}_${secret}_c.jpg`;
-          return <img src={`${photoUrl}`} key={`p-${index}`} />;
+          return <li><img src={`${photoUrl}`} key={`p-${index}`} /></li>;
         })}
       </ul>
     );

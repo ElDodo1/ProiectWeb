@@ -13,6 +13,7 @@
   --logo-width: 55px;
   --header-height: 80px;
   --searchBar-height: 50px;
+  --grid-element:200px;
 }
 
 @media (max-width: 1024px) {
@@ -30,6 +31,7 @@
     --logo-width: 35px;
     --header-height: 60px;
     --searchBar-height: 40px;
+    --grid-element:150px;
   }
 }
 @media (max-width: 480px) {
@@ -37,6 +39,7 @@
     --question-font-size: 21px;
     --logo-width: 25px;
     --header-height: 50px;
+    --grid-element:80px;
   }
 }
 
