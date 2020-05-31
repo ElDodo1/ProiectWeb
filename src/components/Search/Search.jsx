@@ -10,9 +10,13 @@ export default class Search extends Component {
 
   handleKeyPress = (event) => {
     const { inputText } = this.state;
-    if (event.key === "Enter" && this.state.inputText !== "") {
+    if (event.key === "Enter" && inputText !== "") {
       this.props.getSearchState(true);
       this.props.getInputText(inputText);
+    } else {
+      if (inputText === "") {
+        this.props.getSearchState(false);
+      }
     }
   };
 

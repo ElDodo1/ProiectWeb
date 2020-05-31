@@ -17,23 +17,19 @@ export default class Flickr extends Component {
   };
 
   setInputText = (inputText) => {
-    this.setState({ inputText });
-    setTimeout(() => {
-      return this.getDataFromFlickr(), 1000;
-    });
+    this.setState({ inputText }, () => this.getDataFromFlickr());
   };
 
   getDataFromFlickr = () => {
     const { inputText } = this.state;
     const apiKey = "eef643f32cb572dbb2e95e72d708a545";
-    let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${inputText}&format=json&nojsoncallback=1`;
+    let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${inputText}&safe_search=2&format=json&nojsoncallback=1`;
     axios
       .get(url)
       .then((result) => {
         const photo = result.data;
         const photos = photo.photos;
         const photoArray = photos.photo;
-        // console.log(photoArray);
         this.setState({ photoArray });
       })
       .catch((err) => console.log(err));
@@ -47,7 +43,11 @@ export default class Flickr extends Component {
           getSearchState={this.setActiveSearch}
           getInputText={this.setInputText}
         />
-        <DisplayResults active={this.state.activeSearch} photos={photoArray} />
+        <DisplayResults
+          active={this.state.activeSearch}
+          photos={photoArray}
+          source={"Flickr"}
+        />
       </div>
     );
   }
