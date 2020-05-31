@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Search.css";
 import "../../App.css";
-import searchIcon from "../../assets/images/search_icon.svg";
+import searchIcon from "../../assets/icons/search_icon.svg";
 
 export default class Search extends Component {
   state = {

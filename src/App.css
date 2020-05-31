@@ -1,16 +1,16 @@
 :root {
-  --lightest-green: #e0f5cc;
-  --medium-green: #a8c185;
-  --dark-green: #2a4d14;
-  --dark-gray: #212922;
-  --extra-dark-gray: #1a1f16;
+  --lightest-green: #DBE6DD;
+  --medium-green: #93B499;
+  --dark-green: #475B63;
+  --dark-gray: #2E2C2F;
+  --extra-dark-gray: #29282A;
 
-  --slogan-font-size: 21px;
+  --slogan-font-size: 16px;
   --tabTag-font-size: 18px;
   --question-font-size: 37px;
   --searchWord-font-size: 16px;
 
-  --logo-width: 55px;
+  --logo-width: 40px;
   --header-height: 80px;
   --searchBar-height: 50px;
   --grid-element:200px;
@@ -20,15 +20,15 @@
   :root {
     --tabTag-font-size: 16px;
     --question-font-size: 28px;
-    --logo-width: 45px;
+    --logo-width: 35px;
     --header-height: 70px;
   }
 }
 @media (max-width: 768px) {
   :root {
-    --slogan-font-size: 16px;
+    --slogan-font-size: 14px;
     --tabTag-font-size: 14px;
-    --logo-width: 35px;
+    --logo-width: 30px;
     --header-height: 60px;
     --searchBar-height: 40px;
     --grid-element:150px;

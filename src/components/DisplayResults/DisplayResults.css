@@ -1,7 +1,11 @@
+/* nothing has been search */
+
 .inactiveImg {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
+
+/* flickr images have been searched */
 
 ul#flickr-grid-container {
   list-style: none;
@@ -12,18 +16,27 @@ ul#flickr-grid-container {
   grid-auto-rows: var(--grid-element);
   grid-auto-flow: dense;
 }
-li {
+ul#flickr-grid-container li {
   padding: 10px;
 }
-li:nth-child(odd) {
+ul#flickr-grid-container li:nth-child(odd) {
   grid-row: span 2;
   grid-column: span 2;
 }
-li:nth-child(5n + 0) {
+ul#flickr-grid-container li:nth-child(5n + 0) {
   grid-row: span 4;
   grid-column: span 4;
 }
-img {
+ul#flickr-grid-container img {
   height: 100%;
   width: 100%;
+}
+
+/* tweets have been searched */
+
+#twitter-grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap:20px;
 }

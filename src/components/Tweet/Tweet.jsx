@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./Tweet.css";
 import approved from "../../assets/images/approved.png";
-import heart from "../../assets/images/heart.svg";
-import retweet from "../../assets/images/retweet.svg";
+import heart from "../../assets/icons/heart.svg";
+import retweet from "../../assets/icons/retweet.svg";
 export default class Tweet extends Component {
   verifiedAccount = (isVerified) => {
-    if (isVerified) return <img src={approved} alt="" id="isVerified" />;
+    if (isVerified) return <img src={approved} alt="" id="is-verified" />;
   };
   createdPostData = (date) => {
     let dateArray = date.split(" ");
@@ -34,20 +34,23 @@ export default class Tweet extends Component {
         <img src={`${userPhoto}`} alt="userPhoto" />
         <div id="tweet-box">
           <div id="tweet-header">
-            <span id="userName">{userName}</span>
+            <span id="user-name">{userName}</span>
             {this.verifiedAccount(isVerified)}
-            <span id="screenName">@{screenName}</span>
+            <span id="screen-name">@{screenName}</span>
             <span id="date">{this.createdPostData(date)}</span>
+            </div>
             <span id="tweet-text">{text}</span>
+            <div id="numbers">
             <span id="favorite-count">
               {favoriteCount}
-              <img src={heart} alt="" />
+              <img src={heart} alt="likes" />
             </span>
             <span id="retweet-count">
-              <img src={retweet} alt="" />
+              <img src={retweet} alt="shares" />
               {retweetCount}
             </span>
-          </div>
+            </div>
+          
         </div>
       </div>
     );
