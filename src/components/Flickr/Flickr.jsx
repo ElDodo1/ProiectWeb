@@ -18,6 +18,9 @@ export default class Flickr extends Component {
 
   setInputText = (inputText) => {
     this.setState({ inputText });
+    setTimeout(() => {
+      return this.getDataFromFlickr(), 1000;
+    });
   };
 
   getDataFromFlickr = () => {
@@ -36,9 +39,6 @@ export default class Flickr extends Component {
       .catch((err) => console.log(err));
   };
 
-  componentDidUpdate() {
-    this.getDataFromFlickr();
-  }
   render() {
     const { photoArray } = this.state;
     return (
