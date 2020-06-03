@@ -5,6 +5,7 @@ import "../../App.css";
 import Tweet from "../Tweet/Tweet";
 
 export default class DisplayResults extends Component {
+  // We display and format the data we receive, based on it's source from the props
   renderBySource = () => {
     const { source, tweets } = this.props;
     if (source === "Flickr") {
@@ -16,12 +17,15 @@ export default class DisplayResults extends Component {
         let photoUrl = `https://farm${farm_id}.staticflickr.com/${server_id}/${id}_${secret}_c.jpg`;
         return (
           <li key={`p-${index}`}>
-            <img src={`${photoUrl}`} key={`p-${index}`} />
+            <img
+              src={`${photoUrl}`}
+              key={`p-${index}`}
+              alt={`This is -${index}`}
+            />
           </li>
         );
       });
     } else {
-      console.log(this.props.tweets);
       return tweets.map((tweet, index) => {
         const tweetData = {
           userPhoto: tweet.user.profile_image_url_https,
@@ -39,6 +43,7 @@ export default class DisplayResults extends Component {
     }
   };
 
+  // Based on the data source, we display the right container for it
   sourceContainer = () => {
     const { source } = this.props;
     let idContainerName = "";
@@ -53,9 +58,11 @@ export default class DisplayResults extends Component {
 
   render() {
     const { active } = this.props;
+    // An image illustration is displayed before the user searches for something
     return !active ? (
       <img src={inactive} alt="start searching" className="inactiveImg" />
     ) : (
+      // If the user searched for something, we call these methods to show him the right container for the received data
       <ul id={this.sourceContainer()}>{this.renderBySource()}</ul>
     );
   }

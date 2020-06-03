@@ -9,6 +9,7 @@ export default class Twitter extends Component {
     tweets: [],
   };
 
+  // We make a call to the server so that i can request data for us
   getDataFromTwitter = async () => {
     const { inputText } = this.state;
     const tweets = await fetch(
@@ -18,21 +19,18 @@ export default class Twitter extends Component {
       tweets: tweets.data.statuses,
     });
   };
-
+  // If the user searched for something, we update the state
   setActiveSearch = (activeSearch) => {
     this.setState({ activeSearch });
   };
-
+  // After he presses enter, we receive the input and call the function
   setInputText = (inputText) => {
-    this.setState({ inputText });
-    setTimeout(() => {
-      return this.getDataFromTwitter(), 1000;
-    });
+    this.setState({ inputText }, () => this.getDataFromTwitter());
   };
 
   render() {
     return (
-      <div class="tabBg">
+      <div className="tabBg">
         <Search
           getSearchState={this.setActiveSearch}
           getInputText={this.setInputText}

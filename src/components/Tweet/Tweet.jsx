@@ -4,9 +4,12 @@ import approved from "../../assets/images/approved.png";
 import heart from "../../assets/icons/heart.svg";
 import retweet from "../../assets/icons/retweet.svg";
 export default class Tweet extends Component {
+  // We check the isVerified so that we can display a special icon for it
   verifiedAccount = (isVerified) => {
     if (isVerified) return <img src={approved} alt="" id="is-verified" />;
   };
+
+  // We format the date we receive so that it can be shown in a friendly way
   createdPostData = (date) => {
     let dateArray = date.split(" ");
     let newArray = [
@@ -19,6 +22,7 @@ export default class Tweet extends Component {
   };
 
   render() {
+    // We used destructuring assignement so it's easier to type
     let {
       userPhoto,
       userName,
@@ -38,9 +42,9 @@ export default class Tweet extends Component {
             {this.verifiedAccount(isVerified)}
             <span id="screen-name">@{screenName}</span>
             <span id="date">{this.createdPostData(date)}</span>
-            </div>
-            <span id="tweet-text">{text}</span>
-            <div id="numbers">
+          </div>
+          <span id="tweet-text">{text}</span>
+          <div id="numbers">
             <span id="favorite-count">
               {favoriteCount}
               <img src={heart} alt="likes" />
@@ -49,8 +53,7 @@ export default class Tweet extends Component {
               <img src={retweet} alt="shares" />
               {retweetCount}
             </span>
-            </div>
-          
+          </div>
         </div>
       </div>
     );

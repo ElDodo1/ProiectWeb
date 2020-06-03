@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./Flickr.css";
-import "../../App.css";
 import Search from "../Search/Search";
 import DisplayResults from "../DisplayResults/DisplayResults";
 import axios from "axios";
@@ -12,14 +10,17 @@ export default class Flickr extends Component {
     photoArray: [],
   };
 
+  // If the user searched for something, we update the state
   setActiveSearch = (activeSearch) => {
     this.setState({ activeSearch });
   };
 
+  // After he presses enter, we receive the input and call the function
   setInputText = (inputText) => {
     this.setState({ inputText }, () => this.getDataFromFlickr());
   };
 
+  // Using axios we get the data from the Flickr API
   getDataFromFlickr = () => {
     const { inputText } = this.state;
     const apiKey = "eef643f32cb572dbb2e95e72d708a545";

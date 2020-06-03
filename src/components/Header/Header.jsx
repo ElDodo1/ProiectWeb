@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
       <div id="header">
         <img src={logo} alt="" id="logo" />
-        <span id="slogan">Find your perfect photo</span>
+        <span id="slogan">Let's pick it and tweet it</span>
       </div>
     );
   }

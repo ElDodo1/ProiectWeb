@@ -15,10 +15,10 @@ export default class MainContent extends Component {
   state = {
     isClickedFlickr: true,
     isClickedTwitter: false,
-  } 
+  };
 
-changeOnClick = (currentTab) => {
-
+  // Based on what the user clicks we select the active tab
+  changeOnClick = (currentTab) => {
     if (currentTab === "Flickr") {
       this.setState({
         isClickedFlickr: true,
@@ -30,20 +30,28 @@ changeOnClick = (currentTab) => {
         isClickedTwitter: true,
       });
     }
-}
+  };
 
   render() {
     const { isClickedFlickr, isClickedTwitter } = this.state;
     return (
       <div className="mainBg">
         <Router>
-          <div  className="router">
-          <Link to="/flickr" className={`${isClickedFlickr ? "tabActive" : "tabInactive"}`} onClick={() => this.changeOnClick("Flickr")}>
-            Flickr
-          </Link>
-          <Link to="/twitter" className={`${isClickedTwitter ? "tabActive" : "tabInactive"}`} onClick={() => this.changeOnClick("Twitter")}>
-            Twitter
-          </Link>
+          <div className="router">
+            <Link
+              to="/flickr"
+              className={`${isClickedFlickr ? "tabActive" : "tabInactive"}`}
+              onClick={() => this.changeOnClick("Flickr")}
+            >
+              Flickr
+            </Link>
+            <Link
+              to="/twitter"
+              className={`${isClickedTwitter ? "tabActive" : "tabInactive"}`}
+              onClick={() => this.changeOnClick("Twitter")}
+            >
+              Twitter
+            </Link>
           </div>
           <Switch>
             <Route exact path="/">

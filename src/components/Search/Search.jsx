@@ -8,6 +8,7 @@ export default class Search extends Component {
     inputText: "",
   };
 
+  // We very if the user typed something and pressed the Enter key
   handleKeyPress = (event) => {
     const { inputText } = this.state;
     if (event.key === "Enter" && inputText !== "") {
@@ -20,6 +21,7 @@ export default class Search extends Component {
     }
   };
 
+  // We update the inputText when the user types something
   handleOnChange = (event) => {
     this.setState({
       inputText: event.target.value,

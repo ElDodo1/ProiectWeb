@@ -11,7 +11,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-
+// We initialize the call to the Twitter, which requires a request from the server
 app.get("/tweets/", (request, response) => {
   const { searchTerm } = request.query;
 
