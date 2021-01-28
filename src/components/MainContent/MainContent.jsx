@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import "./MainContent.css";
 import "../../App.css";
+import { Test } from "../Test/Test";
 
 export default class MainContent extends Component {
   state = {
@@ -53,6 +54,7 @@ export default class MainContent extends Component {
               Twitter
             </Link>
           </div>
+          <Test/>
           <Switch>
             <Route exact path="/">
               <Redirect to="/flickr"></Redirect>
